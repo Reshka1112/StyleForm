@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FormStyle</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			margin: 0;
+			/*background: url(https://img4.goodfon.ru/wallpaper/nbig/6/c5/piony-tsvety-rozovo-belye.jpg);*/
+			/*background-size: 100%;*/
+			/*font-family: Didact Gothic;*/
+		}
+		#main {
+			width: 100%;
+			height: 100vh;
+			background: url(https://img4.goodfon.ru/wallpaper/nbig/6/c5/piony-tsvety-rozovo-belye.jpg);
+			background-size: 100%;
+			font-family: Didact Gothic;
+			box-sizing: border-box;
+			padding-top: 15%;
+		}
+		form {
+			width: 1000px;
+			height: 550px;
+			border-radius: 20px;
+			margin: auto;
+			background-color: rgba(44, 112, 62, 0.5);
+			padding: 5px;
+		}
+		.registrationform {
+			width: 800px;
+			height: 400px;
+			margin: auto;
+			padding: 10px
+		}
+		.left {
+			width: calc(50% - 20px);
+			float: left;
+			height: 300px;
+		}
+		.right {
+			width: 50%;
+			float: right;
+			height: 300px;
+			padding-left: 20px
+		}
+		.reg {
+			width: 800px;
+			margin: auto;
+			padding-left: 55px;
+			margin-top: 20px;
+		}
+		input {
+			height: 25px;
+			border-radius: 3px;
+			background: antiquewhite;
+			text-align: center;
+			border: none;
+			padding: 3px 25px;
+			font-family: Didact Gothic;
+		}
+		input[type=date]{
+			padding: 3px 30px;
+		}
+		input:focus {
+			outline: 0;
+			border: 1px solid #431eff;
+		}
+		.password {
+			margin-left: 100px
+		}
+		.personal {
+			margin-left: 30px
+		}
+		input[type=checkbox] {
+			opacity: 0;
+		}
+		.label:before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			left: -26px;
+			bottom: 0;
+			width: 20px;
+			height: 20px;
+			box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 0 0 rgba(255, 255, 255, .8);
+			margin-right: 10px;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+		}
+		.label {
+			position: relative;
+		}
+		#check:checked + .label:before {
+			content: "✔";
+			color: red;
+		}
+		.radioclass {
+			margin: 10px 0 ;
+		 }
+		.sex {
+			display: none;
+		}
+		.labelradio {
+			display: inline-block;
+			position: relative;
+			cursor: pointer;
+			padding-left: 25px;
+			margin-right: 15px;
+		}
+		.labelradio:before{
+			content: '';
+			display: inline-block;
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			left: 0;
+			bottom: 1px;
+			box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 0 0 rgba(255, 255, 255, .8);
+		}
+		.sex:checked + .labelradio:before {
+			content: "\2022";
+			color: #f3f3f3;
+			font-size: 30px;
+			text-align: center;
+			line-height: 8px;
+		}
+		.regbutton {
+			background: transparent;
+			padding: 10px 15px;
+			box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 0 0 rgba(255, 255, 255, .8);
+			border: none;
+			transition: 0.5s;
+			margin-top: 25px;
+			margin-left: 40%;
+			cursor: pointer;
+		}
+		.regbutton:hover {
+			background: antiquewhite;
+			outline: 0;
+		}
+		/*input:required {*/
+		/*	border: 1px solid red;*/
+		/*}*/
+	</style>
+</head>
+<body>
+<div id="main">
+	<form>
+		<div class="registrationform">
+			<h1 style="text-align: center;">Регистрация</h1>
+			<div class="left">
+				<h2 style="margin-left:40px "> Личные данные </h2>
+				<div class="personal">
+					<label for="name">Ваше имя*</label>
+					<div>
+						<input type="text" id="name" name="" required="" placeholder="Анна">
+					</div>
+					<label for="surname">Ваша фамилия*</label>
+					<div>
+						<input type="text" id="surname" name="" required="" placeholder="Иванова">
+					</div>
+					<div class="radioclass">
+						<input type="radio" name="123" id="non" class="sex" checked>
+						<label class="labelradio" for="non">Не выбрано</label>
+						<input type="radio" name="123" id="m" class="sex">
+						<label for="m" class="labelradio">Мужчина</label>
+						<input type="radio" name="123" id="w" class="sex">
+						<label for="w" class="labelradio">Женщина</label>
+					</div>
+					<label for="email">E-mail*</label>
+					<div>
+						<input type="email" id="email" name="" required="">
+					</div>
+					<label for="data">Дата рождения</label>
+					<div>
+						<input type="date" id="data" name="">
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<h2 style="margin-left: 110px">Пароль</h2>
+				<div class="password">
+					<label for="login">Логин</label>
+					<div>
+						<input type="text" id="login"  name="" required="">
+					</div>
+					<label for="password">Пароль</label>
+					<div>
+						<input type="password" id ="password" name="" required="" placeholder="не менее 8 символов">
+					</div>
+					<label for="secondpass">Повтор пароля</label>
+					<div>
+						<input type="password" id="secondpass" name="" required="" placeholder="не менее 8 символов">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="reg"> 
+			<div class="confidence">
+				<input type="checkbox" id="check" name="" required="">
+				<label for="check" class="label">Я принимаю условия Политики конфеденциальности*</label>
+			</div>
+				<button type="submit" class="regbutton">Зарегестрироваться</button>
+		</div>
+
+	</form>
+</div>
+</body>
+</html>
